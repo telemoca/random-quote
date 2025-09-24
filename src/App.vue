@@ -19,8 +19,9 @@ const getQuote = () => {
             return response.json()
         })
         .then((data) => {
-            quote.value = data[0].quote
-            author.value = data[0].author
+          console.log(data)
+            quote.value = data.quote
+            author.value = data.author
             loaded.value = true
         })
 }
