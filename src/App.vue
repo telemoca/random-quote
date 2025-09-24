@@ -19,7 +19,6 @@ const getQuote = () => {
             return response.json()
         })
         .then((data) => {
-          console.log(data)
             quote.value = data.quote
             author.value = data.author
             loaded.value = true
@@ -39,7 +38,7 @@ const readTextLoud = () => {
 
     // Select a voice
     let voices = speechSynthesis.getVoices()
-    voices = voices.filter((voice) => voice.lang==="en-US")
+    voices = voices.filter((voice) => voice.lang === "en-US")
     utterance.voice = voices[0]
 
     speechSynthesis.speak(utterance)
