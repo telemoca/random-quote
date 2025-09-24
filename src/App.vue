@@ -11,12 +11,7 @@ const quoteToTweet = computed(() => encodeURIComponent(quoteByAuthor.value))
 
 const getQuote = () => {
     loaded.value = false
-    fetch("https://api.api-ninjas.com/v1/quotes", {
-        method: "GET",
-        headers: {
-            "X-Api-Key": "BaF+nQb5N4qgiBUqqKlCHQ==1oQPoWKSxgREyz5V",
-        },
-    })
+    fetch("/api/quote")
         .then((response) => {
             if (!response.ok) {
                 throw new Error("Error fetching the quote")
